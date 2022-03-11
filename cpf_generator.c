@@ -56,6 +56,12 @@ int main(){
 
     for(int i = 0; i < 9; i++){
         arr[i] = generate_num();
+        
+        while (arr[i] == 0 && i < 8)  // Cannot be 0 intil i > 7
+        {
+            msleep(500);
+            arr[i] = generate_num();
+        }
         msleep(730);  // Isso é necessário porque para gerar um numero aleatório diferente, é necessário esperar o próximo segundo, uma vez que o método é utilizar os segundos para gerar números pseudo-randômicos.
     }
 
