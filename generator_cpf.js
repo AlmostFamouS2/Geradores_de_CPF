@@ -8,7 +8,7 @@ let calc_nums = (cpf) => {  // Sim, eu criei isto.
     for(let i = 0; i < digits_cpf.length; i++)
         sum += digits_cpf[i] * (cpf.length == 9 ? n1[i] : n2[i]);
 
-    return (sum*10 % 11) == 10 ? 0 : sum*10 % 11;
+    return ((sum*10 % 11) < 2 || (sum*10 % 11) == 10) ? 0 : sum*10 % 11;
 }
 
 digits_cpf += calc_nums(digits_cpf);
